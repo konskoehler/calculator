@@ -1,6 +1,5 @@
 package com.kkoehler.calculator
 
-import com.kkoehler.calculator.model.Response
 import com.kkoehler.calculator.model.ResultResponse
 import org.springframework.stereotype.Service
 
@@ -22,11 +21,10 @@ class CalculatorService {
     private final val eligibleChars = concatenate(listOf(CharRange('0', '9')).flatten(), operators, others).toTypedArray()
 
 
-    fun calc(query: String): Response {
+    fun calc(query: String): Float {
         val cleanQuery = query.filter { it != ' ' }
         basicLintCheck(cleanQuery)
-        val numericResult = evaluateTerm(cleanQuery)
-        return ResultResponse(numericResult)
+        return evaluateTerm(cleanQuery)
     }
 
     private fun evaluateTerm(term: String): Float {
