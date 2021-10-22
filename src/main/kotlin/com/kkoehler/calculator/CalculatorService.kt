@@ -1,6 +1,5 @@
 package com.kkoehler.calculator
 
-import com.kkoehler.calculator.model.ResultResponse
 import org.springframework.stereotype.Service
 
 @Service
