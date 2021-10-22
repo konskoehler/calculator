@@ -12,12 +12,7 @@ import java.util.*
 
 @RestController
 class CalculatorController(val service: CalculatorService) {
-
-    @RequestMapping("/")
-    fun home(): String? {
-        return "home"
-    }
-
+    
     @GetMapping("/calculus")
     fun calc(@RequestParam query: String): Response {
         return try {
